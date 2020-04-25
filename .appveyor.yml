@@ -1,3 +1,11 @@
 init:
 - appveyor version
 - freebsd-version
+
+test_script:
+- ls -al ~/build-agent
+
+artifacts:
+- path: README.md
+
+build: off
