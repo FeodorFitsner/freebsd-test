@@ -3,7 +3,8 @@ init:
 - freebsd-version
 
 test_script:
-- ls -al ~/build-agent
+#- ls -al ~/build-agent
+- ls -al ~/
 
 artifacts:
 - path: README.md
