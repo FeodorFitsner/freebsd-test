@@ -4,7 +4,7 @@ init:
 
 test_script:
 #- ls -al ~/build-agent
-- ls -al ~/
+- ls -al ~/projects
 
 artifacts:
 - path: README.md
