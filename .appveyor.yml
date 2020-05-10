@@ -1,6 +1,11 @@
 init:
+- whoami
 - appveyor version
 - freebsd-version
+- bash --version
+- dotnet --version
+- pwd
+- env
 
 test_script:
 #- ls -al ~/build-agent
