@@ -6,7 +6,8 @@ init:
 - dotnet --version
 - pwd
 - env
-- ipfw -q -f flush
+- ls /etc/rc.conf
+- sudo ipfw -q -f flush
 - sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
 
 test_script:
