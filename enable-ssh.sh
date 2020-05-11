@@ -36,6 +36,7 @@ if [ "$PLATFORM" = "Linux" ] && command -v ufw >/dev/null; then
 
     # open 22 port for management network interface
     sudo ufw disable > /dev/null 2>&1
+    sudo ufw reset > /dev/null 2>&1
     sudo ufw allow OpenSSH > /dev/null 2>&1
     sudo ufw --force enable > /dev/null 2>&1
 fi
