@@ -7,8 +7,10 @@ init:
 - pwd
 - env
 - ls -al /etc/ssh
+- ls -al ~/.ssh
 - sudo ssh-keygen -A
 - ls -al /etc/ssh
+- ls -al ~/.ssh
 - sudo service sshd start
 - sleep 60
 - sockstat -l
