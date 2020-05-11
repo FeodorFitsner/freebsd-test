@@ -7,6 +7,7 @@ init:
 - pwd
 - env
 - cat /etc/rc.conf
+- sleep 60
 - sockstat -l
 - sleep 1800
 #- sudo ipfw -q -f flush
