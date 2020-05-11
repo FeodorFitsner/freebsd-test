@@ -1,7 +1,7 @@
 init:
 - whoami
 - appveyor version
-- freebsd-version
+#- freebsd-version
 - bash --version
 - dotnet --version
 - pwd
