@@ -12,9 +12,9 @@ init:
 #- sudo service sshd start
 #- sleep 60
 - sockstat -l
-- bash enable-ssh.sh
 
 test_script:
+- bash enable-ssh.sh
 #- ls -al ~/build-agent
 - ls -al ~/projects
 
