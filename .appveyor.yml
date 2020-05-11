@@ -12,6 +12,7 @@ test_script:
 #- sudo ufw status verbose
 #- sudo ufw --force reset
 - sudo ufw status verbose
+- sudo iptables -L
 - bash enable-ssh.sh
 #- ls -al ~/build-agent
 - ls -al ~/projects
