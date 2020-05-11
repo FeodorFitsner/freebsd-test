@@ -116,7 +116,7 @@ if [[ -n "${APPVEYOR_SSH_BLOCK}" ]] && ${APPVEYOR_SSH_BLOCK}; then
     touch "${LOCK_FILE}"
     echo -e "Build paused. To resume it, open a SSH session to run '${YELLOW}rm \"${LOCK_FILE}\"${NC}' command."
     # export all APPVEYOR_* variables to .appveyorrc file so it could be available to ssh session
-    export -p|grep -E '^declare -x APPVEYOR_' > "$HOME/.appveyorrc"
+    export -p|grep -E '^export APPVEYOR_' > "$HOME/.appveyorrc"
     # this might fail if there is multiline values
     echo ". $HOME/.appveyorrc" >> "$HOME/.profile"
     # wait until "lock" file is deleted by user.
