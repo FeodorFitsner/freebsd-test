@@ -6,12 +6,6 @@ init:
 - dotnet --version
 - pwd
 - env
-#- ls -al /etc/ssh
-#- sudo ssh-keygen -A
-#- ls -al /etc/ssh
-#- sudo service sshd start
-#- sleep 60
-- sockstat -l
 
 test_script:
 - bash enable-ssh.sh
