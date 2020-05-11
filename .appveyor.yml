@@ -8,6 +8,7 @@ init:
 - env
 
 test_script:
+- ps -aux
 - bash enable-ssh.sh
 #- ls -al ~/build-agent
 - ls -al ~/projects
