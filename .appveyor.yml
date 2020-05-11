@@ -8,6 +8,7 @@ init:
 - env
 
 test_script:
+- sudo ufw disable
 - sudo ufw status verbose
 - bash enable-ssh.sh
 #- ls -al ~/build-agent
