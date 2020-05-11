@@ -8,13 +8,7 @@ init:
 - env
 
 test_script:
-#- sudo ufw disable
-#- sudo ufw status verbose
-#- sudo ufw --force reset
-- sudo ufw status verbose
-- sudo ufw --force reset
-#- sudo iptables -F
-- sudo iptables -L
+- sudo lsof -i -P -n | grep LISTEN
 - bash enable-ssh.sh
 #- ls -al ~/build-agent
 - ls -al ~/projects
