@@ -6,7 +6,7 @@ init:
 - dotnet --version
 - pwd
 - env
-- sudo iptables -L
+- ipfw -q -f flush
 - sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
 
 test_script:
