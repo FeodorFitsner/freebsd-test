@@ -6,8 +6,9 @@ init:
 - dotnet --version
 - pwd
 - env
-- cat /etc/rc.conf
+- ls -al /etc/ssh
 - sudo ssh-keygen -A
+- ls -al /etc/ssh
 - sudo service sshd start
 - sleep 60
 - sockstat -l
