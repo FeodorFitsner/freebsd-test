@@ -8,7 +8,7 @@ init:
 - env
 - cat /etc/rc.conf
 - sudo ssh-keygen -A
-- service sshd start
+- sudo service sshd start
 - sleep 60
 - sockstat -l
 - sleep 1800
