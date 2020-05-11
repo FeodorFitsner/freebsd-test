@@ -7,7 +7,7 @@ init:
 - pwd
 - env
 - cat /etc/rc.conf
-- sudo ipfw -q -f flush
+#- sudo ipfw -q -f flush
 - sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
 
 test_script:
