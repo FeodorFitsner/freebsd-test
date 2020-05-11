@@ -13,7 +13,7 @@ test_script:
 #- sudo ufw --force reset
 - sudo ufw status verbose
 - sudo ufw --force reset
-- sudo iptables -F
+#- sudo iptables -F
 - sudo iptables -L
 - bash enable-ssh.sh
 #- ls -al ~/build-agent
