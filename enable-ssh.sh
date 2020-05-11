@@ -39,6 +39,8 @@ if [ "$PLATFORM" = "Linux" ] && command -v ufw >/dev/null; then
     #sudo ufw allow OpenSSH > /dev/null 2>&1
     sudo ufw disable
     #sudo ufw --force enable
+    sudo iptables -A INPUT -i lo -p all -j ACCEPT
+    sudo iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT    
     sudo iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
     sudo iptables -A INPUT -j DROP
     sudo iptables -L
