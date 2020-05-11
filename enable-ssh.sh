@@ -36,9 +36,12 @@ if [ "$PLATFORM" = "Linux" ] && command -v ufw >/dev/null; then
 
     # open 22 port for management network interface
     sudo ufw --force reset > /dev/null 2>&1
-    sudo ufw allow OpenSSH > /dev/null 2>&1
+    #sudo ufw allow OpenSSH > /dev/null 2>&1
     sudo ufw disable
-    sudo ufw --force enable
+    #sudo ufw --force enable
+    sudo iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+    sudo iptables -A INPUT -j DROP
+    sudo iptables -L
 fi
 
 if [ "$PLATFORM" = "FreeBSD" ] && ! [[ $(ps aux | grep sshd | grep -vc grep)  > 0 ]]; then
