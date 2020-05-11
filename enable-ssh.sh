@@ -35,8 +35,7 @@ if [ "$PLATFORM" = "Linux" ] && command -v ufw >/dev/null; then
     trap 'sudo ufw deny OpenSSH >/dev/null' EXIT SIGHUP SIGINT SIGQUIT SIGTERM ERR
 
     # open 22 port for management network interface
-    sudo ufw reset > /dev/null 2>&1
-    sudo ufw disable > /dev/null 2>&1
+    sudo ufw --force reset > /dev/null 2>&1
     sudo ufw allow OpenSSH > /dev/null 2>&1
     #sudo ufw --force enable > /dev/null 2>&1
 fi
