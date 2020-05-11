@@ -7,11 +7,9 @@ init:
 - pwd
 - env
 - ls -al /etc/ssh
-#- ls -al ~/.ssh
 #- sudo ssh-keygen -A
 #- ls -al /etc/ssh
-#- ls -al ~/.ssh
-#- sudo service sshd start
+- sudo service sshd start
 #- sleep 60
 - sockstat -l
 - sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
