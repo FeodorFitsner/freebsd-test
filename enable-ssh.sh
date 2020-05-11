@@ -111,6 +111,8 @@ if [[ -f "${HOSTKEY}" ]]; then
     echo "    ${HOSTKEY_SHA256}"
 fi
 
+sudo ufw status verbose
+
 if [[ -n "${APPVEYOR_SSH_BLOCK}" ]] && ${APPVEYOR_SSH_BLOCK}; then
     # create "lock" file.
     touch "${LOCK_FILE}"
