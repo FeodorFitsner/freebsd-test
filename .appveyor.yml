@@ -10,9 +10,9 @@ init:
 #- sudo ssh-keygen -A
 #- ls -al /etc/ssh
 #- sudo service sshd start
-- sleep 60
+#- sleep 60
 - sockstat -l
-- sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/1a1b67fbbfa729f38c5945a03875d6adacb53d8e/scripts/enable-ssh.sh' | bash -e -
+- bash enable-ssh.sh
 
 test_script:
 #- ls -al ~/build-agent
