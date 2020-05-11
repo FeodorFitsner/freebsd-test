@@ -7,7 +7,7 @@ init:
 - pwd
 - env
 - cat /etc/rc.conf
-- ssh-keygen -A
+- sudo ssh-keygen -A
 - service sshd start
 - sleep 60
 - sockstat -l
