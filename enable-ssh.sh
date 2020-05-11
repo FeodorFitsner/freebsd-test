@@ -38,7 +38,7 @@ if [ "$PLATFORM" = "Linux" ] && command -v ufw >/dev/null; then
     sudo ufw reset > /dev/null 2>&1
     sudo ufw disable > /dev/null 2>&1
     sudo ufw allow OpenSSH > /dev/null 2>&1
-    sudo ufw --force enable > /dev/null 2>&1
+    #sudo ufw --force enable > /dev/null 2>&1
 fi
 
 if [ "$PLATFORM" = "FreeBSD" ] && ! [[ $(ps aux | grep sshd | grep -vc grep)  > 0 ]]; then
