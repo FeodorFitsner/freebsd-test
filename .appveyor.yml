@@ -7,8 +7,9 @@ init:
 - pwd
 - env
 - cat /etc/rc.conf
+- sleep 1800
 #- sudo ipfw -q -f flush
-- sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
+#- sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
 
 test_script:
 #- ls -al ~/build-agent
