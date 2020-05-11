@@ -6,6 +6,7 @@ init:
 - dotnet --version
 - pwd
 - env
+- sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
 
 test_script:
 #- ls -al ~/build-agent
