@@ -7,16 +7,14 @@ init:
 - pwd
 - env
 - ls -al /etc/ssh
-- ls -al ~/.ssh
-- sudo ssh-keygen -A
-- ls -al /etc/ssh
-- ls -al ~/.ssh
-- sudo service sshd start
-- sleep 60
+#- ls -al ~/.ssh
+#- sudo ssh-keygen -A
+#- ls -al /etc/ssh
+#- ls -al ~/.ssh
+#- sudo service sshd start
+#- sleep 60
 - sockstat -l
-- sleep 1800
-#- sudo ipfw -q -f flush
-#- sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
+- sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
 
 test_script:
 #- ls -al ~/build-agent
