@@ -9,9 +9,9 @@ init:
 
 test_script:
 #- sudo lsof -i -P -n | grep LISTEN
-#- bash enable-ssh.sh
+- bash enable-ssh.sh
 #- ls -al ~/build-agent
-- ls -al ~/projects
+#- ls -al ~/projects
 
 artifacts:
 - path: README.md
