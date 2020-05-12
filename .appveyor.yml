@@ -8,8 +8,8 @@ init:
 - env
 
 test_script:
-- sudo lsof -i -P -n | grep LISTEN
-- bash enable-ssh.sh
+#- sudo lsof -i -P -n | grep LISTEN
+#- bash enable-ssh.sh
 #- ls -al ~/build-agent
 - ls -al ~/projects
 
