@@ -75,7 +75,7 @@ esac
 # add ssh key (if set) to authorized_keys
 mkdir -p ${HOME}/.ssh
 (
-    echo "#Added by Appveyor Build Agent"
+    echo "#Added by AppVeyor Build Agent"
     echo "${APPVEYOR_SSH_KEY}"
 ) >> "${HOME}/.ssh/authorized_keys"
 chmod 600 "${HOME}/.ssh/authorized_keys"
@@ -117,8 +117,6 @@ if [[ -f "${HOSTKEY}" ]]; then
     HOSTKEY_SHA256=$(ssh-keygen -lf ${HOSTKEY} | cut -f 2 -d" ")
     echo "    ${HOSTKEY_SHA256}"
 fi
-
-sudo ufw status verbose
 
 if [[ -n "${APPVEYOR_SSH_BLOCK}" ]] && ${APPVEYOR_SSH_BLOCK}; then
     # create "lock" file.
