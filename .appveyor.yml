@@ -5,7 +5,7 @@ init:
 - bash --version
 - dotnet --version
 - pwd
-- env
+- export -p
 
 test_script:
 #- sudo lsof -i -P -n | grep LISTEN
