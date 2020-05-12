@@ -47,7 +47,7 @@ fi
 
 if [ "$PLATFORM" = "FreeBSD" ] && ! [[ $(ps aux | grep sshd | grep -vc grep)  > 0 ]]; then
     # make sure sshd is started
-    sudo service sshd start
+    sudo service sshd start > /dev/null 2>&1
 fi
 
 # get external IP address via https://www.appveyor.com/tools/my-ip.aspx
