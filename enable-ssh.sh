@@ -126,7 +126,7 @@ if [[ -n "${APPVEYOR_SSH_BLOCK}" ]] && ${APPVEYOR_SSH_BLOCK}; then
     # export all session variables to .appveyorrc file so it could be available to ssh session
     {
         echo "set -a"
-        set
+        set | grep -v '^BASH'
         echo "set +a"
     } > "$HOME/.appveyorrc"
     
