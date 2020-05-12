@@ -124,11 +124,7 @@ if [[ -n "${APPVEYOR_SSH_BLOCK}" ]] && ${APPVEYOR_SSH_BLOCK}; then
     echo -e "Build paused. To resume it, open a SSH session to run '${YELLOW}rm \"${LOCK_FILE}\"${NC}' command."
     
     # export all session variables to .appveyorrc file so it could be available to ssh session
-    {
-        echo "set -a"
-        set | grep -v '^BASH'
-        echo "set +a"
-    } > "$HOME/.appveyorrc"
+    sh -c "export -p" > "$HOME/.appveyorrc"
     
     # this might fail if there is multiline values
     echo ". $HOME/.appveyorrc" >> "$HOME/.profile"
