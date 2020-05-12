@@ -34,16 +34,15 @@ fi
 if [ "$PLATFORM" = "Linux" ] && command -v ufw >/dev/null; then
     trap 'sudo ufw deny OpenSSH >/dev/null' EXIT SIGHUP SIGINT SIGQUIT SIGTERM ERR
 
-    # open 22 port for management network interface
+    # disable UFW as closing all incoming ports except 22 doesn't work with UFW for some reason
     sudo ufw --force reset > /dev/null 2>&1
-    #sudo ufw allow OpenSSH > /dev/null 2>&1
-    sudo ufw disable
-    #sudo ufw --force enable
+    sudo ufw disable > /dev/null 2>&1
+    
+    # open 22 port for management network interface
     sudo iptables -A INPUT -i lo -p all -j ACCEPT
     sudo iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT    
     sudo iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
     sudo iptables -A INPUT -j DROP
-    sudo iptables -L
 fi
 
 if [ "$PLATFORM" = "FreeBSD" ] && ! [[ $(ps aux | grep sshd | grep -vc grep)  > 0 ]]; then
