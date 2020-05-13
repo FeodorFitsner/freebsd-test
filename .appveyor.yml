@@ -1,5 +1,5 @@
 init:
-- whoami
+- who am i
 - appveyor version
 #- freebsd-version
 - bash --version
