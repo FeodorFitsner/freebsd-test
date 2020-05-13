@@ -9,6 +9,7 @@ init:
 
 test_script:
 #- sudo lsof -i -P -n | grep LISTEN
+- ls -alG
 - sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
 #- ls -al ~/build-agent
 #- ls -al ~/projects
